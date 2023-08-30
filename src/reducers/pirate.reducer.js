@@ -27,6 +27,11 @@ const pirateValuablesReducer = (state = initialState, action) => {
                 ...state,
                 treasureMaps: [...state.treasureMaps, action.payload]
             };
+        case 'EDIT_GOLD':
+            return {
+                ...state,
+                gold: action.payload
+            };
         default:
             return state;
     }

@@ -17,3 +17,8 @@ export const addTreasureMap = (map) => ({
     type: 'ADD_TREASURE_MAP',
     payload: map
 });
+
+export const editGold = (amount) => ({
+    type: 'EDIT_GOLD',
+    payload: amount
+})
