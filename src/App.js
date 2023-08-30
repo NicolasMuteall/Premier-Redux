@@ -1,23 +1,17 @@
-import logo from './logo.svg';
+import A from './A';
 import './App.css';
+import B from './B';
+import { useSelector } from 'react-redux';
+import { compareValues } from './store';
 
 function App() {
+  const state = useSelector(state => state);
+  const comparisonResult = compareValues(state.A, state.B);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <A />
+      <B />
+      <p>Comparison Result: {comparisonResult}</p>
     </div>
   );
 }
