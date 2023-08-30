@@ -1,19 +1,40 @@
-import A from './A';
 import './App.css';
-import B from './B';
-import { useSelector } from 'react-redux';
-import { compareValues } from './store';
+import { useDispatch } from 'react-redux';
+import { addGold, addDiamonds, addPearls, addTreasureMap } from './actions/pirate.action';
+
+
 
 function App() {
-  const state = useSelector(state => state);
-  const comparisonResult = compareValues(state.A, state.B);
+  const dispatch = useDispatch();
+
+  const handleAddGoldClick = () => {
+    dispatch(addGold(10));
+  };
+
+  const handleAddDiamondsClick = () => {
+    dispatch(addDiamonds(5));
+  };
+
+  const handleAddPearlsClick = () => {
+    dispatch(addPearls(3));
+  };
+
+  const handleAddTreasureMapClick = () => {
+    dispatch(addTreasureMap({
+      location: 'Island X',
+      clues: 'Look for the big palm tree with a red X painted on it.'
+    }));
+  };
+
   return (
-    <div className="App">
-      <A />
-      <B />
-      <p>Comparison Result: {comparisonResult}</p>
+    <div>
+      <button onClick={handleAddGoldClick}>Add 10 gold</button>
+      <button onClick={handleAddDiamondsClick}>Add 5 diamonds</button>
+      <button onClick={handleAddPearlsClick}>Add 3 pearls</button>
+      <button onClick={handleAddTreasureMapClick}>Add treasure map</button>
     </div>
   );
-}
+};
+
 
 export default App;
