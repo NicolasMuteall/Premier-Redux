@@ -1,0 +1,7 @@
+.B {
+    position: fixed;
+    top: 0;
+    right: 250px;
+    border: 1px solid black;
+    text-align: center;
+}

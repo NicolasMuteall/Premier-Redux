@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './A.css';
+import './B.css';
 
-const A = () => {
+const B = () => {
     const pirate = useSelector((state) => state.pirateValuablesReducer)
-
     return (
-        <div className='A'>
-            <h2>Composant A</h2>
+        <div className='B'>
+            <h2>Composant B</h2>
             {pirate.gold} gold
             <p>{pirate.diamonds} diamant</p>
             <p>{pirate.pearls} perle</p>
@@ -15,4 +14,4 @@ const A = () => {
     );
 };
 
-export default A;
+export default B;

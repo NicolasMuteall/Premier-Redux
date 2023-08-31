@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addGold, addDiamonds, addPearls, addTreasureMap, editGold } from './actions/pirate.action';
 import { useState } from 'react';
 import A from './components/A';
+import B from './components/B';
 
 
 function App() {
@@ -45,12 +46,13 @@ function App() {
       <button onClick={handleAddDiamondsClick}>Add 5 diamonds</button>
       <button onClick={handleAddPearlsClick}>Add 3 pearls</button>
       <button onClick={handleAddTreasureMapClick}>Add treasure map</button>
-      <p>{pirate.gold}</p>
       <form action="" onSubmit={handleSubmit}>
-        <input type="text" name="" id="" value={inputG} onChange={handleChange} />
+        <label htmlFor="gold">Modifier l'or: </label>
+        <input type="text" name="gold" id="gold" value={inputG} onChange={handleChange} />
         <input type="submit" />
       </form>
       <A />
+      <B />
     </div>
   );
 };
